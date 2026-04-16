@@ -10,3 +10,14 @@ player1.y = canvas.height/2;
 
 player1.width = 20;
 player1.height = 100;
+
+timer = setInterval(animate, interval);
+
+function animate()
+{
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    player1.move();
+
+    player1.drawRect();
+}
