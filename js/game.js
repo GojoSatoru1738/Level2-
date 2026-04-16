@@ -28,7 +28,7 @@ timer = setInterval(animate, interval);
 document.addEventListener("keydown", press);
 document.addEventListener("keyup", release);
 
-//Define Booleans for each key
+
 var w = false;
 var s = false;
 
