@@ -19,23 +19,43 @@ function animate()
 
     player1.move();
 
+  
+
     player1.drawRect();
 }
 
-document.addEventListener("keydown", keyDownHandler);
-document.addEventListener("keyup", keyUpHandler);
+document.addEventListener("keydown", press);
+document.addEventListener("keyup", release);
 
-function keyDown(e) {
-    if (e.key == "w") {
-        player1.vy = -5;
-    }
-    if (e.key == "s") {
-        player1.vy = 5;
-    }
+//Define Booleans for each key
+var w = false;
+var s = false;
+
+function press(e)
+{
+	
+	
+	if(e.keyCode == 87)
+	{
+		w = true;
+	}
+	if(e.keyCode == 83)
+	{
+		s = true;
+	}
 }
 
-function keyUp(e) {
-    if (e.key == "w" || e.key == "s") {
-        player1.vy = 0;
-    }
+function release(e)
+{
+	
+	
+	if(e.keyCode == 87)
+	{
+		w = false;
+	}
+	if(e.keyCode == 83)
+	{
+		s = false;
+	}
 }
+

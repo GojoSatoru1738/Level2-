@@ -20,8 +20,16 @@ function GameObject() {
         );
     };
 
+  
     this.move = function() {
-        this.x += this.vx;
-        this.y += this.vy;
-    };
-}
+            if (w)
+             {
+                 this.y -= 10;
+                 }
+    
+            if (s)
+             {
+             this.y += 10;
+             }
+         };
+    }
