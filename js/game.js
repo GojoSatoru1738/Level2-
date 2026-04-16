@@ -21,3 +21,21 @@ function animate()
 
     player1.drawRect();
 }
+
+document.addEventListener("keydown", keyDownHandler);
+document.addEventListener("keyup", keyUpHandler);
+
+function keyDown(e) {
+    if (e.key == "w") {
+        player1.vy = -5;
+    }
+    if (e.key == "s") {
+        player1.vy = 5;
+    }
+}
+
+function keyUp(e) {
+    if (e.key == "w" || e.key == "s") {
+        player1.vy = 0;
+    }
+}
