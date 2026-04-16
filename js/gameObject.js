@@ -2,10 +2,10 @@ function GameObject() {
     this.x = 0;
     this.y = 0;
 
-    this.width = 50;
+    this.width = 1;
     this.height = 50;
 
-    this.color = "#00ff00";
+    this.color = "purple";
 
     this.vx = 0;
     this.vy = 0;
@@ -19,6 +19,16 @@ function GameObject() {
             this.height
         );
     };
+
+    
+    this.drawCircle = function() {
+        context.beginPath();
+        context.arc(this.x, this.y, this.width/2, 0, Math.PI * 2);
+        context.fillStyle = this.color;
+        context.fill();
+        context.closePath();
+    };
+
 
   
     this.move = function() {
