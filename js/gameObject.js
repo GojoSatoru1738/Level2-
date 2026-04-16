@@ -2,7 +2,7 @@ function GameObject() {
     this.x = 0;
     this.y = 0;
 
-    this.width = 1;
+    this.width = 50;
     this.height = 50;
 
     this.color = "purple";
@@ -19,6 +19,7 @@ function GameObject() {
             this.height
         );
     };
+    
 
     
     this.drawCircle = function() {

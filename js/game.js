@@ -3,7 +3,9 @@ var context = canvas.getContext("2d");
 var timer;
 var interval = 1000/60;
 
+//BALL
 var ball = new GameObject();
+
 ball.x = canvas.width / 2;
 ball.y = canvas.height / 2;
 ball.vx = 4;
@@ -12,7 +14,7 @@ ball.width = 50;
 ball.height = 50;
 ball.color = "purple";
 
-
+//PADDLE
 var paddle = new GameObject();
 
 paddle.x = 25;
