@@ -67,6 +67,12 @@ function animate()
     ball.x += ball.vx;
     ball.y += ball.vy;
 //ye
+    if (ball.collidesWith(paddle)) {
+        ball.vx = -ball.vx;
+
+        // prevent sticking
+        ball.x = paddle.right() + ball.width / 2;
+    }
     
     if (ball.x > canvas.width) {
         ball.x = canvas.width;

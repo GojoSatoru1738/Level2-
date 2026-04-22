@@ -10,6 +10,21 @@ function GameObject() {
     this.vx = 0;
     this.vy = 0;
 
+    this.top = function() {
+        return this.y - this.height / 2;
+    };
+
+    this.bottom = function() {
+     return this.y + this.height / 2;
+    };
+
+    this.left = function() {
+        return this.x - this.width / 2;
+    };
+
+    this.right = function() {
+        return this.x + this.width / 2;
+    };
     this.drawRect = function() {
         context.fillStyle = this.color;
         context.fillRect(
