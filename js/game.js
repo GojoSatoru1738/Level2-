@@ -8,8 +8,8 @@ var ball = new GameObject();
 
 ball.x = canvas.width / 2;
 ball.y = canvas.height / 2;
-ball.vx = 4;
-ball.vy = 4;
+ball.vx = -4;
+ball.vy = 0;
 ball.width = 50;
 ball.height = 50;
 ball.color = "purple";
@@ -67,12 +67,6 @@ function animate()
     ball.x += ball.vx;
     ball.y += ball.vy;
 //ye
-    //if (ball.collidesWith(paddle)) {
-       // ball.vx = -ball.vx;
-
-        // prevent sticking
-        //ball.x = paddle.right() + ball.width / 2;
-   // }
     
     if (ball.x > canvas.width) {
         ball.x = canvas.width;
@@ -124,6 +118,34 @@ if (paddle.y > canvas.height - paddle.height/2) {
     paddle.y = canvas.height - paddle.height/2;
 }
 
+
+    if (ball.x - ball.width/2 < paddle.x + paddle.width/2)
+{
+    if (ball.y > paddle.y - paddle.height/2)
+    {
+        if (ball.y < paddle.y + paddle.height/2)
+        {
+            
+            if (ball.y < paddle.y - paddle.height/6) {
+                ball.vx = 4;
+                ball.vy = -4;
+            }
+            
+            else if (ball.y < paddle.y + paddle.height/6) {
+                ball.vx = 4;
+                ball.vy = 0;
+            }
+            
+            else {
+                ball.vx = 4;
+                ball.vy = 4;
+            }
+
+            
+            ball.x = paddle.x + paddle.width/2 + ball.width/2;
+        }
+    }
+}
    
 }
 
