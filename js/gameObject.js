@@ -5,11 +5,26 @@ function GameObject() {
     this.width = 50;
     this.height = 50;
 
-    this.color = "#00ff00";
+    this.color = "purple";
 
     this.vx = 0;
     this.vy = 0;
 
+    this.top = function() {
+        return this.y - this.height / 2;
+    };
+
+    this.bottom = function() {
+     return this.y + this.height / 2;
+    };
+
+    this.left = function() {
+        return this.x - this.width / 2;
+    };
+
+    this.right = function() {
+        return this.x + this.width / 2;
+    };
     this.drawRect = function() {
         context.fillStyle = this.color;
         context.fillRect(
@@ -19,9 +34,28 @@ function GameObject() {
             this.height
         );
     };
+    
 
-    this.move = function() {
-        this.x += this.vx;
-        this.y += this.vy;
+    
+    this.drawCircle = function() {
+        context.beginPath();
+        context.arc(this.x, this.y, this.width/2, 0, Math.PI * 2);
+        context.fillStyle = this.color;
+        context.fill();
+        context.closePath();
     };
-}
+
+
+  
+    this.move = function() {
+            if (w)
+             {
+                 this.y -= 10;
+                 }
+    
+            if (s)
+             {
+             this.y += 10;
+             }
+         };
+    }
