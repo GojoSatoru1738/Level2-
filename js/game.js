@@ -118,7 +118,7 @@ if (paddle.y > canvas.height - paddle.height/2) {
     paddle.y = canvas.height - paddle.height/2;
 }
 
-
+// ALL DA COLLISION
     if (ball.x - ball.width/2 < paddle.x + paddle.width/2)
 {
     if (ball.y > paddle.y - paddle.height/2)
