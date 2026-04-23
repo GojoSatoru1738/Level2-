@@ -19,13 +19,21 @@ function animate()
 
     player1.move();
 
+    if (player1.y < player1.height/2) {
+    player1.y = player1.height/2;
+}
+
+if (player1.y > canvas.height - player1.height/2) {
+    player1.y = canvas.height - player1.height/2;
+}
+
     player1.drawRect();
 }
 
-document.addEventListener("keydown", keyDownHandler);
-document.addEventListener("keyup", keyUpHandler);
+document.addEventListener("keydown", keyDownHand);
+document.addEventListener("keyup", keyUpHand);
 
-function keyDown(e) {
+function keyDownHand(e) {
     if (e.key == "w") {
         player1.vy = -5;
     }
@@ -34,7 +42,7 @@ function keyDown(e) {
     }
 }
 
-function keyUp(e) {
+function keyUpHand(e) {
     if (e.key == "w" || e.key == "s") {
         player1.vy = 0;
     }
