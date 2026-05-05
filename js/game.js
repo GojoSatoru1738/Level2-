@@ -97,11 +97,13 @@ function animate()
     ball.y += ball.vy;
 //ye
     
-    if (ball.x > canvas.width) {
-        ball.x = canvas.width;
-        ball.x -= ball.width/2;
-        ball.vx = -ball.vx;
-    }
+ if (ball.x > canvas.width) {
+    ball.x = canvas.width / 2;
+    ball.y = canvas.height / 2;
+
+    ball.vx = -4;
+    ball.vy = 0;
+}
 
     
     
@@ -192,7 +194,7 @@ if (paddle2.y > canvas.height - paddle2.height/2) {
 }
 
 //Paddle 2
-    if (ball.x - ball.width/2 < paddle2.x + paddle2.width/2)
+    if (ball.x + ball.width/2 > paddle2.x - paddle2.width/2)
 {
     if (ball.y > paddle2.y - paddle2.height/2)
     {
@@ -200,22 +202,22 @@ if (paddle2.y > canvas.height - paddle2.height/2) {
         {
             
             if (ball.y < paddle2.y - paddle2.height/6) {
-                ball.vx = 4;
+                ball.vx = -4;
                 ball.vy = -4;
             }
             
             else if (ball.y < paddle2.y + paddle2.height/6) {
-                ball.vx = 4;
+                ball.vx = -4;
                 ball.vy = 0;
             }
             
             else {
-                ball.vx = 4;
+                ball.vx = -4;
                 ball.vy = 4;
             }
 
             
-            ball.x = paddle2.x + paddle2.width/2 + ball.width/2;
+            ball.x = paddle2.x - paddle2.width/2 - ball.width/2;
         }
     }
 }
