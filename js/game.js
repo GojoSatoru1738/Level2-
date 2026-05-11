@@ -93,17 +93,39 @@ function animate()
 {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
+context.fillStyle = "yellow";
+context.font = "20px Arial";
+
+context.fillText("P1: " + p1Wins, 50, 30);
+context.fillText("P2: " + p2Wins, canvas.width - 100, 30);
+
+
     ball.x += ball.vx;
     ball.y += ball.vy;
 //ye
-    
- if (ball.x > canvas.width) {
-    ball.x = canvas.width / 2;
-    ball.y = canvas.height / 2;
 
-    ball.vx = -4;
-    ball.vy = 0;
+// RIGHT SIDE BRUHHH
+if (ball.x > canvas.width) {
+   p1Wins += 1;
+
+   ball.x = canvas.width / 2;
+   ball.y = canvas.height / 2;
+
+   ball.vx = -4;
+   ball.vy = 0;
 }
+
+// LEFT SIDE 
+if (ball.x < 0) {
+   p2Wins += 1;
+
+   ball.x = canvas.width / 2;
+   ball.y = canvas.height / 2;
+
+   ball.vx = 4;
+   ball.vy = 0;
+}
+
 
     
     
